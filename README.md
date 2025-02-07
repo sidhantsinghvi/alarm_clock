@@ -18,7 +18,7 @@ In this lab, I created three distinct digital alarm clocks using Verilog and the
 - Digital Tool Files
 - Lab Report
 
+![Image](https://github.com/user-attachments/assets/f6cf58fb-6f32-4c9f-8a08-3ffc6eff5ca5)
+
 ## Resources
 [Lab 1 Details](https://cse140l.github.io/fa24-labs/docs/lab1/)
-
-<img width="1401" alt="image" src="https://github.com/user-attachments/assets/682ebb04-9555-4549-b0b6-0f3cf7a92b5a" />
