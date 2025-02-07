@@ -1,0 +1,28 @@
+{
+    "tests": [
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_part1",
+            "output": "",
+            "tags": null,
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_part2",
+            "output": "",
+            "tags": null,
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_part3",
+            "output": "",
+            "tags": null,
+            "visibility": "visible"
+        }
+    ]
+}
