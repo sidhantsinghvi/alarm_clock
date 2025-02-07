@@ -1,18 +1,22 @@
-Lab 1: Digital Alarm Clock
-Overview
-In Lab 1, I created three different digital alarm clocks using the Verilog programming language and the Digital tool. The lab’s objectives ranged from basic alarm clock functionality to more complex designs, including the French Republican calendar system. I tackled various aspects of digital circuit design, focusing on sequential logic and efficient simulation techniques.
+# Lab 1: Digital Alarm Clock
 
-Tasks
-Conventional Alarm Clock: A basic digital alarm clock design.
-French Republican Alarm Clock: A clock following the French Republican calendar.
-French Republican Calendar Alarm Clock: An enhanced version incorporating the calendar.
-Skills Learned
-Verilog programming
-Digital circuit design and simulation
-Debugging and testing of circuits
-Deliverables
-Verilog code files
-Digital tool files
-Lab report summarizing the process and outcomes
-Resources
-Lab 1 Details
+## Overview
+In this lab, I created three distinct digital alarm clocks using Verilog and the Digital tool. The tasks included designing a conventional alarm clock, a French Republican alarm clock, and a French Republican calendar alarm clock. Each clock progressively introduced more complex functionality and required careful circuit design and simulation.
+
+## Tasks
+- **Conventional Alarm Clock**: Basic digital clock functionality.
+- **French Republican Alarm Clock**: Integrating a calendar system.
+- **French Republican Calendar Alarm Clock**: Enhanced with calendar features.
+
+## Skills Learned
+- Verilog Programming
+- Digital Circuit Design
+- Simulation and Debugging
+
+## Deliverables
+- Verilog Code Files
+- Digital Tool Files
+- Lab Report
+
+## Resources
+[Lab 1 Details](https://cse140l.github.io/fa24-labs/docs/lab1/)
