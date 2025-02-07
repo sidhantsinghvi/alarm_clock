@@ -1,0 +1,63 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\info
+{\author ssinghvi}}\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\deftab720
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 LAB REPORT 2\
+1.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8226 	}The multiplier uses an accumulator to store partial results, a control unit to manage operations, and Booth's algorithm to handle the shifting, addition, or subtraction of the multiplicand based on the multiplier's bits. The multiplier keeps shifting with the accumulator to give space for the 26bit result. So after every step the shifter holds one extra bit of the accumulator and one les of the multiplier\
+{\listtext	\uc0\u8226 	}Glue logic connects the control unit, accumulator, and multiplier to coordinate shifts, additions, and subtractions as needed by the algorithm. So the last bit moves in a cycle to maintain the shifter holding 13 bits each. It moves from acuumulator to accumulator/multiplier to f1 flipflop.\
+{\listtext	\uc0\u8226 	}We developed the glue logic by analyzing which control signals (add, subtract, shift) that describe where the moved LSB goes from the accumulator to multiplier and multiplier to F1 flip flop.\
+{\listtext	\uc0\u8226 	}We talked through the steps are required at each step of the multiplication process and using logic gates to connect them. This part took really long as we were confused about the reset button and clear buttons connectivity as it wasn\'92t clearly explained in the writeup.\
+{\listtext	\uc0\u8226 	}This signal is based on the least significant bits of the multiplier, and the flipflop as that contains the m-1 bit from where 01 means add the multiplicand, and 10 means subtract it and 00 and 11 mean no op. The first bit here is from the multiplier and the second is from flipflop.\
+{\listtext	\uc0\u8226 	}The load signal tells the accumulator when to store the result of an addition or subtraction after each operation. It helps with the decision of the direct bit shift too if it\'92s a 00 or 11.\
+{\listtext	\uc0\u8226 	}This input shifts in the correct bit (often the sign bit from extension or result of the last operation) during the right shift process after each step in Booth\'92s algorithm.\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+2.\
+The bit width of the adder was reduced by recognizing predictable patterns in Booth\'92s algorithm, minimizing the risk of overflow. \
+Sign extenders and splitter mergers were removed from part 1.\
+F2\'92s input was connected to the MSB of the accumulator for proper sign extension during shifts.\
+These were possible because sign extension ensures correct handling of negative numbers in two's complement, simplifying the circuit.\
+The correct output range with -4096 as a multiplier are large numbers. We get incorrect outputs with numbers like 0 and 1 that are smaller.\
+3.\
+In Booth's multiplication, the sign bit of the accumulator changes based on whether we\'92re adding or subtracting the multiplicand. I implemented a simple 2-input logic using the add/subtract signal and the multiplicand's sign to control the sign bit. However, even multipliers produced incorrect results due to issues with how the sign bit is shifted and handled, leading to errors in sign extension for these cases.\
+4.\
+The modification of the Booth's Multiplier to handle the edge case of even multipliers by implementing a shift-in value of 0 before the first addition/subtraction and utilizing a flip-flop to track the first operation significantly enhances the robustness of the design. Also, checking that the circuits handle 0 as both the multiplier and multiplicand prevents wrong outputs and maintains correctness of the multiplication fo.\
+5.\
+Y0 and Y1 produce different outputs when:\
+A = 0, B = 1, C = 1, D = 0\
+A = 0, B = 1, C = 0, D = 1\
+A = 0, B = 1, C = 1, D = 1\
+A = 0, B = 0, C = 1, D = 1\
+\
+Z0 and Z1 always produce the same output.\
+\
+Unobfuscated Equation:\
+F1=(A`.B+A.B`)C+(A.B+A`.B`)C\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1 \cf0 {{\NeXTGraphic Pasted Graphic 2.png \width6780 \height5620 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Pasted Graphic 3.png \width7560 \height6300 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Pasted Graphic 5.png \width13180 \height7960 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Pasted Graphic 6.png \width13180 \height7960 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf0 {{\NeXTGraphic Pasted Graphic 8.png \width13180 \height7960 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}}
