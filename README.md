@@ -1,4 +1,4 @@
-# Lab 1: Digital Alarm Clock
+# Digital Alarm Clock
 
 ## Overview
 In this lab, I created three distinct digital alarm clocks using Verilog and the Digital tool. The tasks included designing a conventional alarm clock, a French Republican alarm clock, and a French Republican calendar alarm clock. Each clock progressively introduced more complex functionality and required careful circuit design and simulation.
